@@ -16,6 +16,8 @@ def getInstaPost(shortcode):
         result = subprocess.run(['python', 'custom-script.py',shortcode], capture_output=True, text=True)
         
         # Check if the script ran successfully
+        tempData=result.stdout.strip()
+        print(tempData)
         if result.returncode == 0:
             response = {
                 "status": "success",
